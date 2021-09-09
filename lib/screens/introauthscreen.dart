@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:zoom_clone/authentication/navigateauthscreen.dart';
 import 'package:zoom_clone/variables.dart';
 
 class IntroAuthScreen extends StatefulWidget {
@@ -52,16 +53,20 @@ class _IntroAuthScreenState extends State<IntroAuthScreen> {
             )),
       ],
       onDone: () {
-        print("Done");
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => NavigateAuthScreen()));
       },
       onSkip: () {},
       showSkipButton: true,
-      skip: const Icon(Icons.skip_next,size: 45,),
+      skip: const Icon(
+        Icons.skip_next,
+        size: 45,
+      ),
       next: const Icon(Icons.arrow_forward_ios),
       done: Text(
         "Done",
-        style: mystyle(20,Colors.black),
-        ),
-      );
+        style: mystyle(20, Colors.black),
+      ),
+    );
   }
 }
